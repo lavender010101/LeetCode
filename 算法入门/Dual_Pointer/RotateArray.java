@@ -24,9 +24,9 @@ class Solution {
 	/* reverse the array from begin to end */
 	public void reverse(int[] nums, int begin, int end) {
 		while (begin < end) {
-			nums[begin] = nums[begin] ^ nums[end];
-			nums[end] = nums[begin] ^ nums[end];
-			nums[begin] = nums[begin] ^ nums[end];
+			int tmp = nums[begin];
+			nums[begin] = nums[end];
+			nums[end] = tmp;
 			begin++;
 			end--;
 		}
