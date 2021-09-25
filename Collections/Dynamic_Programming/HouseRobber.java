@@ -23,21 +23,20 @@ Total amount you can rob = 2 + 9 + 1 = 12.
 ```
  */
 class Solution {
-    public int rob(int[] nums) {
-        if (nums.length == 1) {
-            return nums[0];
-        }
-        else if(nums.length == 2) {
-           return nums[0] > nums[1] ? nums[0] : nums[1];
-        }
-        
-        int length = nums.length;
-        nums[2] += nums[0];
+	public int rob(int[] nums) {
+		if (nums.length == 1) {
+			return nums[0];
+		} else if (nums.length == 2) {
+			return nums[0] > nums[1] ? nums[0] : nums[1];
+		}
 
-        for (int i = 3; i < length; i++) {
-            nums[i] += nums[i - 2] > nums[i - 3] ? nums[i - 2] : nums[i - 3];
-        }
+		int length = nums.length;
+		nums[2] += nums[0];
 
-        return nums[length - 1] > nums[length - 2] ? nums[length - 1] : nums[length - 2];
-    }
+		for (int i = 3; i < length; i++) {
+			nums[i] += nums[i - 2] > nums[i - 3] ? nums[i - 2] : nums[i - 3];
+		}
+
+		return nums[length - 1] > nums[length - 2] ? nums[length - 1] : nums[length - 2];
+	}
 }
