@@ -27,6 +27,9 @@ Explanation:
 
 Tags
 Greedy, Array
+
+Solution 
+Greedy
  */
 
 class Solution {
